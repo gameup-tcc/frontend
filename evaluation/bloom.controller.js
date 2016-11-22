@@ -34,7 +34,7 @@
 
         function submitEvaluation() {
             vm.submission.result = JSON.stringify(vm.bloom_eval);
-            AuthService.post('http://gameupapi.herokuapp.com/games/'+vm.gameId+'/evaluations/', vm.submission,  function(data) {
+            AuthService.post('https://gameupapi.herokuapp.com/games/'+vm.gameId+'/evaluations/', vm.submission,  function(data) {
             });
             goToGame(vm.gameId);
         }

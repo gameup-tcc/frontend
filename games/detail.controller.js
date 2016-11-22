@@ -37,13 +37,13 @@
 
         function getGameInfo(id){
             var game;
-            AuthService.getOne('http://gameupapi.herokuapp.com/games/'+id+'/', function(data) {
+            AuthService.getOne('https://gameupapi.herokuapp.com/games/'+id+'/', function(data) {
                 vm.game = data;
             });
         }
 
         function getBloomReport(id) {
-            AuthService.getOne('http://gameupapi.herokuapp.com/games/'+id+'/reports/bloom',  function(data) {
+            AuthService.getOne('https://gameupapi.herokuapp.com/games/'+id+'/reports/bloom',  function(data) {
                 vm.bloomReport = data;
                 configureSpiderChart('bloomProcessChart', vm.bloomReport.process, cognitiveProcesses, 'Processos cognitivos');
                 configureSpiderChart('bloomAssessmentChart', vm.bloomReport.assessment, assessment, 'Assessment');
@@ -53,7 +53,7 @@
         }
 
         function getGamificationReport(id) {
-            AuthService.getOne('http://gameupapi.herokuapp.com/games/'+id+'/reports/gamification',  function(data) {
+            AuthService.getOne('https://gameupapi.herokuapp.com/games/'+id+'/reports/gamification',  function(data) {
                 vm.gamificationReport = data;
                 configureSpiderChart('gamificationCoreChart', vm.gamificationReport.coreDrive, coreDrives, 'Motivações básicas');
                 configureSpiderChart('gamificationAttributesChart', vm.gamificationReport.attributes, attributes, 'Atributos');

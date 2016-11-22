@@ -27,7 +27,7 @@
         }
 
         function getUser(id){
-            AuthService.getOne('http://gameupapi.herokuapp.com/users/'+id+'/', function(data) {
+            AuthService.getOne('https://gameupapi.herokuapp.com/users/'+id+'/', function(data) {
                 vm.user = data;
             });
         }

@@ -44,7 +44,7 @@
         }
 
         function authenticate(data) {
-            $http({method: 'POST', url:'http://gameupapi.herokuapp.com/api-token-auth/', data: data})
+            $http({method: 'POST', url:'https://gameupapi.herokuapp.com/api-token-auth/', data: data})
             .success(function(response){
                 var headers = {'Authorization': 'JWT '+response.token};
                 setIntoSession('headers', headers);

@@ -26,7 +26,7 @@
         }
 
         function saveUser(){
-            AuthService.post('http://gameupapi.herokuapp.com/users/', vm.game,  function(data) {
+            AuthService.post('https://gameupapi.herokuapp.com/users/', vm.game,  function(data) {
             });
             goToGameList();
         }

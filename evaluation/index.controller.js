@@ -28,7 +28,7 @@
         }
 
         function getGame(id) {
-            AuthService.getOne('http://gameupapi.herokuapp.com/games/'+id+'/', function(data) {
+            AuthService.getOne('https://gameupapi.herokuapp.com/games/'+id+'/', function(data) {
                 vm.game = data;
             });
         }
