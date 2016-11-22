@@ -26,7 +26,7 @@
         }
 
         function saveGame(){
-            AuthService.post('http://localhost:8000/games/', vm.game,  function(data) {
+            AuthService.post('http://gameupapi.herokuapp.com/games/', vm.game,  function(data) {
             });
             goToGameList();
         }

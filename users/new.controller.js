@@ -26,7 +26,7 @@
         }
 
         function saveUser(){
-            AuthService.post('http://localhost:8000/users/', vm.game,  function(data) {
+            AuthService.post('http://gameupapi.herokuapp.com/users/', vm.game,  function(data) {
             });
             goToGameList();
         }

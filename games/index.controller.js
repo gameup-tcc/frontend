@@ -54,7 +54,7 @@
         }
 
         function getGameList(){
-            AuthService.getList('http://localhost:8000/games/', function(data) {
+            AuthService.getList('http://gameupapi.herokuapp.com/games/', function(data) {
                 vm.games = data;
                 buildGridModel(vm.games);
             });

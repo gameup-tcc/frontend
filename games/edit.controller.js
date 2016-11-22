@@ -29,13 +29,13 @@
         }
 
         function getGame(id){
-            AuthService.getOne('http://localhost:8000/games/'+id+'/',  function(data) {
+            AuthService.getOne('http://gameupapi.herokuapp.com/games/'+id+'/',  function(data) {
                 vm.game = data;
             });
         }
 
         function saveGame(){
-            AuthService.put('http://localhost:8000/games/'+vm.gameId+'/',  vm.game, function(data) {
+            AuthService.put('http://gameupapi.herokuapp.com/games/'+vm.gameId+'/',  vm.game, function(data) {
             });
             goToGame(vm.gameId);
         }

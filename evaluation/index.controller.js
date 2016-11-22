@@ -28,7 +28,7 @@
         }
 
         function getGame(id) {
-            AuthService.getOne('http://localhost:8000/games/'+id+'/', function(data) {
+            AuthService.getOne('http://gameupapi.herokuapp.com/games/'+id+'/', function(data) {
                 vm.game = data;
             });
         }
