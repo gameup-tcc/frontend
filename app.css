@@ -1,0 +1,52 @@
+.center-content {
+  max-width: 800px;
+  margin: auto;
+}
+.fab-button {
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+}
+
+.fab-button > md-icon {
+  margin-top: 15px;
+}
+.gray {
+  background: #f5f5f5; }
+
+.orange {
+  background: #fccc3f; }
+
+.green {
+  background: #b9f6ca; }
+
+.yellow {
+  background: #ffff8d; }
+
+.blue {
+  background: #84ffff; }
+
+.darkBlue {
+  background: #80d8ff; }
+
+.deepBlue {
+  background: #448aff; }
+
+.purple {
+  background: #b388ff; }
+
+.lightPurple {
+  background: #8c9eff; }
+
+.red {
+  background: #ff8a80; }
+
+.pink {
+  background: #ff80ab; }
+
+md-content{
+  background-color: white;
+}
+
+md-grid-tile md-icon {
+  padding-bottom: 32px; }

@@ -1,0 +1,117 @@
+<html lang="en" ng-app="app">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+  <!-- Angular Material style sheet -->
+  <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.1/angular-material.min.css">
+  <link rel="stylesheet" href="http://cdn.materialdesignicons.com/1.7.22/css/materialdesignicons.min.css">
+
+  <link rel="stylesheet" href="app.css">
+
+</head>
+
+<body ng-controller="IndexController as vm">
+    <md-toolbar class="md-hue-2">
+      <div class="md-toolbar-tools">
+        <md-button class="md-icon-button" 
+                   aria-label="Settings" 
+                   ng-click="vm.isOpen = !vm.isOpen">
+          <md-icon md-font-set="mdi" class="mdi-24px" md-font-icon="mdi-menu"></md-icon>
+        </md-button>
+        <h2>
+          <span>Game up Learn up</span>
+        </h2>
+        <span flex></span>
+        <span></span>
+        <h3>{{user.username}}</h3>
+        <md-button class="md-icon-button"
+                   aria-label="Logout"
+                   ng-if="user.isLogged"
+                   ng-click="vm.logout()">
+          <md-icon md-font-set="mdi" class="mdi-24px" md-font-icon="mdi-logout"></md-icon>
+        </md-button>
+        <md-button class="md-icon-button"
+                   aria-label="Login"
+                   ng-if="!user.isLogged"
+                   ng-click="vm.login()">
+          <md-icon md-font-set="mdi" class="mdi-24px" md-font-icon="mdi-login"></md-icon>
+        </md-button>
+      </div>
+    </md-toolbar>
+
+    <md-sidenav
+        class="md-sidenav-left"
+        md-component-id="left"
+        md-is-open="vm.isOpen"
+        md-whiteframe="4">
+      <md-toolbar class="md-theme-indigo">
+        <div class="md-toolbar-tools">
+          <md-button class="md-icon-button" 
+                     aria-label="Settings" 
+                     ng-click="vm.isOpen = !vm.isOpen">
+            <md-icon md-font-set="mdi" class="mdi-24px" md-font-icon="mdi-menu"></md-icon>
+          </md-button>
+          <h1>
+            <span>Sidenav</span>
+          </h1>
+        </div>
+      </md-toolbar>
+
+      <md-content layout-padding>
+        <md-list flex>
+          <md-list-item ng-repeat="item in vm.sidenavOptions"
+                        ng-href="{{item.click}}">
+            <md-icon md-font-set="mdi" class="mdi-24px" md-font-icon="{{item.icon}}"></md-icon>
+            <p>{{item.text}}</p>
+          </md-list-item>
+        </md-list>
+      </md-content>
+    </md-sidenav>
+
+    <md-content ng-view>
+    </md-content>
+
+  <!-- Angular Material requires Angular.js Libraries -->
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-messages.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-route.js"></script>
+
+  <!-- Angular Material Library -->
+  <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.1/angular-material.min.js"></script>
+
+  <!-- Highcharts -->
+  <script src="https://code.highcharts.com/highcharts.js"></script>
+  <script src="https://code.highcharts.com/highcharts-more.js"></script>
+
+  <!-- Lodash-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.16.6/lodash.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.16.6/lodash.min.js"></script>
+
+  <!-- Your application bootstrap  -->
+  <script src="app.module.js"></script>
+  <script src="app.route.js"></script>
+  <script src="index.controller.js"></script>
+  <script src="frameworks.service.js"></script>
+
+  <script src="users/users.module.js"></script>
+  <script src="users/users.service.js"></script>
+  <script src="users/edit.controller.js"></script>
+  <script src="users/new.controller.js"></script>
+  <script src="users/login.controller.js"></script>
+  <script src="users/users-index.controller.js"></script>
+
+  <script src="games/games.module.js"></script>
+  <script src="games/index.controller.js"></script>
+  <script src="games/detail.controller.js"></script>
+  <script src="games/new.controller.js"></script>
+  <script src="games/edit.controller.js"></script>
+
+  <script src="evaluation/evaluation.module.js"></script>
+  <script src="evaluation/bloom.controller.js"></script>
+  <script src="evaluation/gamification.controller.js"></script>
+  <script src="evaluation/index.controller.js"></script>
+</body>
+</html>
+

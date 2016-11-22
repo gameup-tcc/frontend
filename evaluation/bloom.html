@@ -1,0 +1,31 @@
+<div class="center-content" ng-controller="BloomEvaluationController as vm">
+  <md-card>
+    <md-card-title>
+      <md-card-title-text>
+        <span class="md-headline">Processos cognitivos</span>
+      </md-card-title-text>
+    </md-card-title>
+    <md-card-content>
+
+     <md-tabs md-dynamic-height md-border-bottom>
+      <md-tab ng-repeat="process in vm.bloom"
+              label="{{ process.processo }}">
+        <md-content class="md-padding">
+            <md-checkbox ng-repeat="subprocess in process.subprocesses"
+                         ng-model="vm.bloom_eval[process.id][subprocess.id]"
+                         aria-label="{{subprocess.verbo}}">
+              {{subprocess.verbo}}
+            <md-tooltip md-direction="left">
+              {{subprocess.synonyms[0]}}
+            </md-tooltip>
+          </md-checkbox>
+        </md-content>
+      </md-tab>
+    </md-tabs>
+    </md-card-content>
+    <md-card-actions layout="row" layout-align="end center">
+      <md-button>Cancelar</md-button>
+      <md-button ng-click="vm.submitEvaluation()">Submeter</md-button>
+    </md-card-actions>
+  </md-card>
+</div>

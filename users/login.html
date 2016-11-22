@@ -1,0 +1,26 @@
+<div class="center-content" ng-controller="LoginController as vm"
+     layout="column" layout-align="center center" layout-margin>
+  <md-card>
+    <md-card-title>
+      <md-card-title-text>
+        <span class="md-headline">Login</span>
+      </md-card-title-text>
+    </md-card-title>
+    <md-card-content>
+      <md-input-container class="md-block" flex-gt-sm>
+        <label>Username</label>
+        <input ng-model="vm.user.username"
+               required>
+      </md-input-container>
+
+      <md-input-container class="md-block" flex-gt-sm>
+        <label>Password</label>
+        <input ng-model="vm.user.password"
+               required>
+      </md-input-container>
+    </md-card-content>
+    <md-card-actions layout="row" layout-align="end center">
+      <md-button ng-click="vm.submitLogin()">Login</md-button>
+    </md-card-actions>
+  </md-card>
+</div>

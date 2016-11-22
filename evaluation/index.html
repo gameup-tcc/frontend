@@ -1,0 +1,21 @@
+<div class="center-content" ng-controller="IndexEvaluationController as vm"
+     layout="column" layout-align="center center" layout-margin>
+  <md-card>
+    <md-card-title>
+      <md-card-title-text>
+        <span class="md-headline">Você está prestes a avaliar {{ vm.game.name }}. Preparado?</span>
+      </md-card-title-text>
+    </md-card-title>
+    <md-card-content>
+        <p class="md-caption">Description</p>
+        <span class="md-body-1">{{ vm.game.info }}</span>
+
+    </md-card-content>
+    <md-card-actions layout="row" layout-align="end center">
+      <md-button class="md-raised md-warn" ng-href="#/games/{{ vm.game.id }}">Cancel</md-button>
+      <span flex></span>
+      <md-button class="md-raised md-primary" ng-href="#/evaluation/{{ vm.game.id }}/bloom">Bloom</md-button>
+      <md-button class="md-raised md-primary" ng-href="#/evaluation/{{ vm.game.id }}/gamification">Gamification</md-button>
+    </md-card-actions>
+  </md-card>
+</div>

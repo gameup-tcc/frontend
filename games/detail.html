@@ -1,0 +1,74 @@
+<div layout ng-controller="GameDetailController as vm">
+  <div flex="30" layout-margin>
+    <div layout layout-align="center center">
+      <img ng-if="vm.game.game_img_url"
+           ng-src="{{vm.game.game_img_url}}"
+           style="max-width:200px;  max-height:200px;  width: auto;  height: auto; border-radius: 50%;">
+
+      <img ng-if="!vm.game.game_img_url"
+           ng-src="https://openclipart.org/image/800px/svg_to_png/227918/Video-Game-Controller-Icon.png"
+           style="max-width:200px;  max-height:200px;  width: auto;  height: auto; border-radius: 50%;">
+    </div>
+    <md-card>
+      <md-card-content>
+          <p class="md-caption">Jogo</p>
+          <span class="md-body-1">{{ vm.game.name }}</span>
+          <p class="md-caption">Descrição</p>
+          <span class="md-body-1">{{ vm.game.info }}</span>
+          <p class="md-caption" ng-if="vm.game.game_url">Link</p>
+          <a href="{{ vm.game.game_url }}" class="md-body-1">{{ vm.game.game_url }}</a>
+
+      </md-card-content>
+      <md-card-actions layout="row" layout-align="space-between center">
+        <md-button class="md-raised md-primary" ng-if="user.isLogged" ng-href="#/games/edit/{{ vm.game.id }}">Editar</md-button>
+        <md-button class="md-raised md-primary" ng-if="user.isLogged" ng-href="#/evaluation/{{ vm.game.id }}">Avaliar</md-button>
+      </md-card-actions>
+    </md-card>
+  </div>
+
+
+  <div flex="70">
+    <md-card>
+      <md-tabs md-dynamic-height md-border-bottom>
+        <md-tab label="Gamificação">
+          <md-content>
+              <div layout="row">
+              <div id="gamificationCoreChart" style="min-width: 100px; max-width: 500px; height: 300px; margin: 0 auto" flex="50"></div>
+              <div id="gamificationAttributesChart" style="min-width: 100px; max-width: 500px; height: 300px; margin: 0 auto" flex="50"></div>
+              </div>
+
+              <div layout layout-align="center center">
+              <md-list flex="40">
+                <md-subheader class="md-no-sticky">Técnicas mais expressivas</md-subheader>
+                <md-list-item ng-repeat="technique in vm.gamificationReport.topTechniques |
+                                         limitTo: 5">
+                  <p> {{ vm.getTechniqueName(technique[0]) }} </p>
+                </md-list-item>
+              </md-list>
+              <div id="gamificationColumnChart" style="min-width: 400px; height: 300px;" flex></div>
+              </div>
+          </md-content>
+        </md-tab>
+        <md-tab label="Bloom">
+          <md-content>
+              <div layout="row">
+              <div id="bloomProcessChart" style="min-width: 100px; max-width: 500px; height: 300px; margin: 0 auto" flex="50"></div>
+              <div id="bloomAssessmentChart" style="min-width: 100px; max-width: 500px; height: 300px; margin: 0 auto" flex="50"></div>
+              </div>
+
+              <div layout layout-align="center center">
+              <md-list flex="40">
+                <md-subheader class="md-no-sticky">Subprocessos mais expressivos</md-subheader>
+                <md-list-item ng-repeat="subprocess in vm.bloomReport.topSubProcesses |
+                                         limitTo: 5">
+                  <p> {{ vm.getSubProcessName(subprocess[0]) }} </p>
+                </md-list-item>
+              </md-list>
+              <div id="bloomColumnChart" style="min-width: 400px; height: 300px;" flex></div>
+              </div>
+          </md-content>
+        </md-tab>
+      </md-tabs>
+    </md-card>
+  </div>
+</div>

@@ -1,0 +1,41 @@
+<div class="center-content" ng-controller="NewGameController as vm">
+  <md-card>
+    <md-card-title>
+      <md-card-title-text>
+        <span class="md-headline">New game</span>
+      </md-card-title-text>
+    </md-card-title>
+    <md-card-content>
+
+      <form name="GameForm" ng-submit="vm.saveGame()">
+
+        <md-input-container class="md-block" flex-gt-sm>
+          <label>Name</label>
+          <input ng-model="vm.game.name"
+                 required>
+        </md-input-container>
+
+        <md-input-container class="md-block" flex-gt-sm>
+          <label>Info</label>
+          <input ng-model="vm.game.info"
+                 required>
+        </md-input-container>
+
+        <md-input-container class="md-block" flex-gt-sm>
+          <label>Link do jogo</label>
+          <input ng-model="vm.game.game_url">
+        </md-input-container>
+
+        <md-input-container class="md-block" flex-gt-sm>
+          <label>Link para imagem do jogo</label>
+          <input ng-model="vm.game.game_img_url">
+        </md-input-container>
+
+        <div layout layout-align="end center">
+          <md-button class="md-warn md-raised" ng-click="vm.goToGameList()">Cancel</md-button>
+          <md-button class="md-primary md-raised" type=submit>Create</md-button>
+        </div>
+      </form>
+      </md-card-content>
+  </md-card>
+</div>
