@@ -23,10 +23,12 @@
         /////////////
 
         function activate() {
+            vm.user.role = "GEN";
         }
 
         function saveUser(){
-            AuthService.post('https://gameupapi.herokuapp.com/users/', vm.game,  function(data) {
+            console.log(vm.user);
+            AuthService.post('https://gameupapi.herokuapp.com/users/', vm.user,  function(data) {
             });
             goToGameList();
         }

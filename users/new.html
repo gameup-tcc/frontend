@@ -1,6 +1,6 @@
 <div class="center-content" ng-controller="NewUserController as vm"
      layout="column" layout-align="center center" layout-margin>
-  <img ng-src="https://cdn.shopify.com/s/files/1/0193/6253/products/harry_grande.png?v=1428269553"
+  <img ng-src="https://brunanayara.github.io/img/avatar.png"
        style="max-width:200px;  max-height:200px;  width: auto;  height: auto; border-radius: 50%;">
   <md-card>
     <md-card-title>
@@ -47,9 +47,13 @@
 
       </md-input-container>
 
-      <md-checkbox ng-model="data.cb1" aria-label="Checkbox 1">
-        Professor
-      </md-checkbox>
+      <md-input-container>
+        <label>Perfil</label>
+        <md-select ng-model="vm.user.role">
+          <md-option ng-value="GEN">General</md-option>
+          <md-option ng-value="PRO">Professor</md-option>
+        </md-select>
+      </md-input-container>
 
     </md-card-content>
     <md-card-actions layout="row" layout-align="end center">
