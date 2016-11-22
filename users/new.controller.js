@@ -13,6 +13,7 @@
 
         angular.extend(vm, {
             user: {},
+            role: false,
 
             goToGameList: goToGameList,
             saveUser: saveUser,
@@ -23,10 +24,15 @@
         /////////////
 
         function activate() {
-            vm.user.role = "GEN";
         }
 
         function saveUser(){
+            console.log(vm.user);
+            if(vm.role === true) {
+                vm.user.role = "PRO";
+            } else {
+                vm.user.role = "GEN";
+            }
             console.log(vm.user);
             AuthService.post('https://gameupapi.herokuapp.com/users/', vm.user,  function(data) {
             });

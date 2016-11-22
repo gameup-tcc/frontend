@@ -47,13 +47,9 @@
 
       </md-input-container>
 
-      <md-input-container>
-        <label>Perfil</label>
-        <md-select ng-model="vm.user.role">
-          <md-option ng-value="GEN">General</md-option>
-          <md-option ng-value="PRO">Professor</md-option>
-        </md-select>
-      </md-input-container>
+      <md-checkbox ng-model="vm.role" aria-label="Role">
+        Professor
+      </md-checkbox>
 
     </md-card-content>
     <md-card-actions layout="row" layout-align="end center">
