@@ -5,10 +5,10 @@
         .module('app')
         .controller('IndexController', IndexController);
 
-    IndexController.$inject = ['$rootScope', 'AuthService'];
+    IndexController.$inject = ['$location', '$rootScope', 'AuthService'];
 
     /* @ngInject */
-    function IndexController($rootScope, AuthService) {
+    function IndexController($location, $rootScope, AuthService) {
         var vm = this;
 
         if($rootScope.user === undefined) {
@@ -40,6 +40,7 @@
                 //},
             ],
 
+            goToHome: goToHome,
             login: goToLogin,
             logout: logout,
         });
@@ -56,6 +57,10 @@
                     isLogged: true
                 };
             }
+        }
+
+        function goToHome() {
+            $location.path( '/games');
         }
 
         function goToLogin() {

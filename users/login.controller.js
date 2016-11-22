@@ -5,15 +5,16 @@
         .module('app.users')
         .controller('LoginController', LoginController);
 
-    LoginController.$inject = ['AuthService'];
+    LoginController.$inject = ['$location', 'AuthService'];
 
     /* @ngInject */
-    function LoginController(AuthService) {
+    function LoginController($location, AuthService) {
         var vm = this;
 
         angular.extend(vm, {
             user: {},
 
+            goToNewUser: goToNewUser,
             submitLogin: submitLogin,
         });
 
@@ -22,6 +23,10 @@
         /////////////
 
         function activate() {
+        }
+
+        function goToNewUser() {
+            $location.path( '/user/new');
         }
 
         function submitLogin() {

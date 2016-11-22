@@ -2,6 +2,9 @@
   max-width: 800px;
   margin: auto;
 }
+.center-content > md-card {
+  min-width: 500px;
+}
 .fab-button {
   position: fixed;
   right: 10px;

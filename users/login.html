@@ -19,8 +19,9 @@
                required>
       </md-input-container>
     </md-card-content>
-    <md-card-actions layout="row" layout-align="end center">
-      <md-button ng-click="vm.submitLogin()">Login</md-button>
+    <md-card-actions layout="row" layout-align="space-between center">
+      <md-button ng-click="vm.goToNewUser()" class="md-raised">Novo usuário</md-button>
+      <md-button ng-click="vm.submitLogin()" class="md-raised md-primary">Login</md-button>
     </md-card-actions>
   </md-card>
 </div>
